@@ -30,9 +30,10 @@ public record FdItem(
                 .creativeCategory(CreativeCategory.ITEMS)
                 .icon(this.iconKey()));
         builder.component(JavaItemDataComponents.MAX_STACK_SIZE, this.maxStackSize);
-        if (this.translationKey != null) {
-            builder.translationString(this.translationKey);
-        }
+        // Do not pass the mod's Java translation key to Geyser. Geyser resolves translationString
+        // from its own locale tables, which do not contain Farmer's Delight keys; Bedrock would
+        // therefore display the raw key (for example, "item.farmersdelight.hamburger").
+        // displayName above is the explicit fallback shown to Bedrock players.
         if (this.nutrition > 0) {
             builder.component(JavaItemDataComponents.FOOD, JavaFoodProperties.builder()
                     .nutrition(this.nutrition)

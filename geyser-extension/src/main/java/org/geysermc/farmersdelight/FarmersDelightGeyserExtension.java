@@ -14,6 +14,11 @@ import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
 import org.geysermc.geyser.api.extension.Extension;
 import org.geysermc.geyser.api.util.CreativeCategory;
 import org.geysermc.geyser.api.item.custom.v2.NonVanillaCustomItemDefinition;
+import org.geysermc.geyser.api.item.custom.v2.CustomItemBedrockOptions;
+import org.geysermc.geyser.api.item.custom.v2.component.geyser.GeyserBlockPlacer;
+import org.geysermc.geyser.api.item.custom.v2.component.geyser.GeyserItemDataComponents;
+import org.geysermc.geyser.api.item.custom.v2.component.java.JavaItemDataComponents;
+import org.geysermc.geyser.api.util.Identifier;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -60,6 +65,35 @@ public class FarmersDelightGeyserExtension implements Extension {
                 event.register(item.toDefinition(javaId));
             } catch (RuntimeException e) {
                 this.logger().warning("Failed to register item " + item.javaName() + ": " + e.getMessage());
+            }
+        }
+
+        // Block items are non-vanilla Java items too. registerItemOverride() only replaces an
+        // existing Java item mapping; it does not create the mapping for a modded item. Register
+        // each block item as a real non-vanilla custom item and attach a Bedrock block placer.
+        for (FdBlocks.FdBlock block : FdBlocks.ALL) {
+            String javaName = "farmersdelight:" + block.javaPath();
+            int javaId = this.javaIds.getOrDefault(javaName, -1);
+            if (javaId < 0) {
+                this.logger().warning("No network id recorded for block item " + javaName
+                        + " - run /fdg dumpids on the server.");
+                continue;
+            }
+
+            String bedrockBlockIdentifier = "geyser:farmersdelight_" + block.javaPath().replace('/', '_');
+            try {
+                NonVanillaCustomItemDefinition definition = NonVanillaCustomItemDefinition.builder(
+                                Identifier.of(javaName), Identifier.of(javaName), javaId)
+                        .displayName(block.displayName())
+                        .bedrockOptions(CustomItemBedrockOptions.builder()
+                                .creativeCategory(CreativeCategory.CONSTRUCTION))
+                        .component(JavaItemDataComponents.MAX_STACK_SIZE, 64)
+                        .component(GeyserItemDataComponents.BLOCK_PLACER,
+                                GeyserBlockPlacer.of(Identifier.of(bedrockBlockIdentifier), true))
+                        .build();
+                event.register(definition);
+            } catch (RuntimeException e) {
+                this.logger().warning("Failed to register block item " + javaName + ": " + e.getMessage());
             }
         }
     }
@@ -142,13 +176,6 @@ public class FarmersDelightGeyserExtension implements Extension {
             }
         }
 
-        for (Map.Entry<String, CustomBlockData> entry : blocks.entrySet()) {
-            try {
-                event.registerItemOverride("farmersdelight:" + entry.getKey(), entry.getValue());
-            } catch (RuntimeException e) {
-                this.logger().warning("Failed to register block item " + entry.getKey() + ": " + e.getMessage());
-            }
-        }
     }
 
     private static String pathOf(String ident) {
@@ -175,7 +202,9 @@ public class FarmersDelightGeyserExtension implements Extension {
                 .build();
         return CustomBlockData.builder()
                 .name("farmersdelight_" + path.replace('/', '_'))
-                .includedInCreativeInventory(true)
+                // The Java block item is registered separately as a non-vanilla custom item
+                // with BLOCK_PLACER. Do not also create Geyser's generic custom-block item.
+                .includedInCreativeInventory(false)
                 .creativeCategory(CreativeCategory.CONSTRUCTION)
                 .components(components)
                 .build();

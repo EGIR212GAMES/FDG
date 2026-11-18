@@ -14,8 +14,8 @@ The bridge is implemented **inside the Polymer patch mod** (no separate jar need
 
 ## What it does
 
-1. For Bedrock players, block/item packets carry the real FD registry values, so Geyser's custom
-   content mapping (the `geyser-extension` + `custom_mappings` + Bedrock resource pack) becomes active.
+ 1. For Bedrock players, block/item packets carry the real FD registry values, so Geyser's custom
+   content mapping (the `geyser-extension` + Bedrock resource pack) becomes active.
  2. `/fdg dumpids` writes `farmersdelight.properties`; `/fdg dumpblocks` writes `farmersdelight_blocks.properties` in the format consumed by the extension.
 
 ## Enable/disable

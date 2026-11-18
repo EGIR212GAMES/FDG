@@ -54,7 +54,16 @@ The root `bedrock-resourcepack/` folder is only a model/manifest skeleton; do no
 
 - `gameplay.enable-custom-content: true` in Geyser's `config.yml`.
 - A generated Bedrock resource pack (built from the actual Farmer's Delight JAR) in Geyser's `packs/`.
-- The extension registers block-state mappings through the Geyser API; do not also install the static JSON mapping file.
+- The extension registers block states and block items through the Geyser API.
+
+Do **not** install the old `farmersdelight_blocks.json` in `config/custom_mappings/`.
+If it was copied there by an earlier setup, delete that file (or replace it with the empty
+`blocks: {}` version from this repository) before restarting Geyser. The old JSON mapping
+registers a second custom-block definition for the same Java item identifiers and can override
+the item mapping created by this extension.
+
+Block items are registered as non-vanilla custom items with a `geyser:block_placer` component,
+so they have a real Bedrock inventory mapping as well as the custom block they place.
 
 ## Critical prerequisite: the server bridge
 
