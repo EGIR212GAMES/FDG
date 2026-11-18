@@ -90,7 +90,8 @@ public class FarmersDelightGeyserExtension implements Extension {
                 continue;
             }
 
-            String bedrockBlockIdentifier = "geyser:farmersdelight_" + block.javaPath().replace('/', '_');
+            // Geyser prefixes CustomBlockData identifiers with "geyser_custom:", not "geyser:".
+            String bedrockBlockIdentifier = "geyser_custom:farmersdelight_" + block.javaPath().replace('/', '_');
             try {
                 NonVanillaCustomItemDefinition definition = NonVanillaCustomItemDefinition.builder(
                                 Identifier.of(javaName), Identifier.of(javaName), javaId)
