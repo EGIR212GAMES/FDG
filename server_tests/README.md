@@ -30,13 +30,16 @@ Java 26.3, Fabric loader `0.19.5`.
 3. Start the server and run `/fdg dumpids` and `/fdg dumpblocks`.
 4. Copy `farmersdelight.properties` and `farmersdelight_blocks.properties` into
    `config/Geyser-Fabric/extensions/geyser-extension/`.
-5. Build the Bedrock resource pack from the exact Farmer's Delight JAR (run from `server_tests/`):
+5. Install the model-converter dependency and build the Bedrock resource pack from the exact
+   Farmer's Delight JAR (run from `server_tests/`):
    ```
+   python -m pip install -r requirements.txt
    python tools/build_bedrock_rp.py --mod-jar mods/farmers-delight-refabricated.jar \
        --skeleton ../bedrock-resourcepack --out packs/rp-built --mcpack packs/farmers-delight-rp.mcpack
    ```
-   The generator also refreshes `geyser-extension/src/main/resources/farmersdelight-item-icons.txt`
-   and writes a content-derived manifest version so Bedrock clients do not keep a stale cached pack.
+   The generator converts the original block models from the mod jar, creates per-block atlases,
+   refreshes the item icon manifest and Russian locale file, and writes a content-derived manifest
+   version so Bedrock clients do not keep a stale cached pack.
 6. Rebuild the Geyser extension **after** running the pack generator, so the extension JAR contains
    the exact icon-key list for that resource pack:
    ```

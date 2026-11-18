@@ -42,20 +42,24 @@ requiring a hand-maintained Java list.
 
 ## Real textures (no placeholders)
 
-Build the Bedrock resource pack from the actual FD mod jar:
+Install the model-conversion dependency once, then build the Bedrock resource pack from the exact FD mod jar:
 
 ```
+python -m pip install -r server_tests/requirements.txt
 python server_tests/tools/build_bedrock_rp.py \
     --mod-jar path/to/farmers-delight-refabricated.jar \
     --skeleton bedrock-resourcepack --out bedrock-resourcepack-built --mcpack bedrock-resourcepack-built.mcpack
 ```
 
-The generator extracts the real PNGs, writes `item_texture.json`/`terrain_texture.json`, and updates
-`geyser-extension/src/main/resources/farmersdelight-item-icons.txt` from the exact item atlas keys.
-It also derives the Bedrock manifest version from the pack contents, invalidating stale client-side
-resource-pack caches when textures change. **Run the generator before rebuilding the extension** so
-the new JAR contains the matching icon manifest. Place the generated `.mcpack` into Geyser's `packs/`.
-The root `bedrock-resourcepack/` folder is only a model/manifest skeleton; do not install it directly.
+The generator extracts the real PNGs, reads each registered block's original `blockstates` and
+`models/block` JSON from the supplied mod jar, converts those models to Bedrock geometry, and builds
+a separate multi-texture atlas for each block. It writes `item_texture.json`/`terrain_texture.json`,
+updates `farmersdelight-item-icons.txt`, and exports the mod's official `ru_ru.json` names to
+`farmersdelight-ru.properties` for the Geyser extension. It derives the Bedrock manifest version
+from pack contents to invalidate stale client-side caches. **Run the generator before rebuilding
+the extension** so the JAR contains the matching icons and Russian names. Place the generated
+`.mcpack` into Geyser's `packs/`. The root `bedrock-resourcepack/` folder is only a skeleton;
+do not install it directly.
 
 ## Required setup on Geyser
 

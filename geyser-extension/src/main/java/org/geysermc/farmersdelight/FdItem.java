@@ -25,7 +25,7 @@ public record FdItem(
                 Identifier.of(this.bedrockId),
                 javaId
         );
-        builder.displayName(this.displayName);
+        builder.displayName(FdTranslations.translate("item." + this.javaName.replace(':', '.'), this.displayName));
         builder.bedrockOptions(CustomItemBedrockOptions.builder()
                 .creativeCategory(CreativeCategory.ITEMS)
                 .icon(this.iconKey()));

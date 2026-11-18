@@ -9,7 +9,6 @@
     "mod.CommonModBusEventsMixin",
     "mod.ConfigurationMixin",
     "mod.CookingPotBlockEntityMixin",
-    "mod.CookingPotBlockMixin",
     "mod.CuttingBoardBlockEntityMixin",
     "mod.FDRecipeMixin",
     "mod.ModBlocksMixin",

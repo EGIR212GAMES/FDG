@@ -95,7 +95,7 @@ public class FarmersDelightGeyserExtension implements Extension {
             try {
                 NonVanillaCustomItemDefinition definition = NonVanillaCustomItemDefinition.builder(
                                 Identifier.of(javaName), Identifier.of(javaName), javaId)
-                        .displayName(block.displayName())
+                        .displayName(FdTranslations.translate("block.farmersdelight." + block.javaPath(), block.displayName()))
                         .bedrockOptions(CustomItemBedrockOptions.builder()
                                 .creativeCategory(CreativeCategory.CONSTRUCTION))
                         .component(JavaItemDataComponents.MAX_STACK_SIZE, 64)
@@ -215,6 +215,9 @@ public class FarmersDelightGeyserExtension implements Extension {
                     continue;
                 }
 
+                JavaBoundingBox[] collision = path.equals("cooking_pot")
+                        ? new JavaBoundingBox[]{new JavaBoundingBox(0.5, 0.3125, 0.5, 0.75, 0.625, 0.75)}
+                        : new JavaBoundingBox[]{new JavaBoundingBox(0.5, 0.5, 0.5, 1.0, 1.0, 1.0)};
                 JavaBlockState jbs = JavaBlockState.builder()
                         .identifier(ident)
                         .javaId(javaId)
@@ -222,7 +225,7 @@ public class FarmersDelightGeyserExtension implements Extension {
                         .blockHardness(hardness)
                         .waterlogged(waterlogged)
                         .canBreakWithHand(canBreak)
-                        .collision(new JavaBoundingBox[]{new JavaBoundingBox(0.5, 0.5, 0.5, 1.0, 1.0, 1.0)})
+                        .collision(collision)
                         .build();
                 event.registerOverride(jbs, cbd.blockStateBuilder().build());
             } catch (RuntimeException e) {
@@ -241,18 +244,22 @@ public class FarmersDelightGeyserExtension implements Extension {
 
     private static CustomBlockData buildBlock(FdBlocks.FdBlock fb, String path) {
         String renderMethod = switch (path) {
-            case "wooden_basket", "bamboo_basket", "stove", "cooking_pot", "skillet", "cutting_board" -> "alpha_test";
+            case "wooden_basket", "bamboo_basket", "stove", "cooking_pot", "skillet", "cutting_board", "canvas_rug" -> "alpha_test";
             default -> "opaque";
         };
-        BoxComponent fullBlockBox = BoxComponent.fullBox();
+        // The cooking pot is smaller than a full block. A full cube here causes the Bedrock
+        // placement prediction/collision test to reject valid placements near the player.
+        BoxComponent blockBox = path.equals("cooking_pot")
+                ? new BoxComponent(-6, 0, -6, 12, 10, 12)
+                : BoxComponent.fullBox();
         CustomBlockComponents components = CustomBlockComponents.builder()
                 // Explicit selection/collision boxes make the custom block targetable and breakable
                 // on Bedrock instead of depending on client defaults.
-                .collisionBoxes(fullBlockBox)
-                .selectionBox(fullBlockBox)
+                .collisionBoxes(blockBox)
+                .selectionBox(blockBox)
                 .geometry(GeometryComponent.builder().identifier(fb.geometry()).build())
                 .materialInstance("*", MaterialInstance.builder().texture(fb.texture()).renderMethod(renderMethod).build())
-                .displayName(fb.displayName())
+                .displayName(FdTranslations.translate("block.farmersdelight." + path, fb.displayName()))
                 .build();
         return CustomBlockData.builder()
                 .name("farmersdelight_" + path.replace('/', '_'))
@@ -297,7 +304,8 @@ public class FarmersDelightGeyserExtension implements Extension {
             }
             displayName.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
         }
-        return displayName.length() == 0 ? path : displayName.toString();
+        String fallback = displayName.length() == 0 ? path : displayName.toString();
+        return FdTranslations.translate("item.farmersdelight." + path, fallback);
     }
 
     private void loadItemIds() {
