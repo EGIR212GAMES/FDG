@@ -1,0 +1,9 @@
+# Floodgate-Fabric config (template). Merge into generated config.
+# Bedrock 26.52 target.
+
+floodgate:
+  # Bedrock players get a "username-prefix" (default: "."). Keep it to avoid name collisions.
+  username-prefix: "."
+
+  # Allows the server mod (bridge) to identify Bedrock players via FloodgateApi.
+  use-proxy-protocol: false

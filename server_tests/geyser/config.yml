@@ -1,0 +1,18 @@
+# Geyser-Fabric config (template). Merge these keys into the config generated on first start.
+# Bedrock 26.52 target. See https://wiki.geysermc.org/geyser/setup
+
+gameplay:
+  # Required for custom items/blocks mapping to be active.
+  enable-custom-content: true
+
+bedrock:
+  address: 0.0.0.0:19132
+  # debug for the Bedrock protocol version of the client you target (26.52)
+  protocol-version: auto
+
+packs:
+  # Bedrock resource pack (built from ../bedrock-resourcepack/).
+  - "packs/farmers-delight-rp.mcpack"
+
+# Place `farmersdelight_blocks.json` in `custom_mappings/`.
+# Place `farmersdelight-geyser-extension.jar` in `extensions/`.

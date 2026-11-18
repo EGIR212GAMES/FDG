@@ -1,0 +1,34 @@
+{
+  "required": true,
+  "package": "eu.pb4.farmersdelightpatch.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityMixin",
+    "ServerPlayerEntityMixin",
+    "mod.CanvasSignBlockMixin",
+    "mod.CommonModBusEventsMixin",
+    "mod.ConfigurationMixin",
+    "mod.CookingPotBlockEntityMixin",
+    "mod.CookingPotBlockMixin",
+    "mod.CuttingBoardBlockEntityMixin",
+    "mod.FDRecipeMixin",
+    "mod.ModBlocksMixin",
+    "mod.RegUtilsMixin",
+    "mod.RottenTomatoItemMixin",
+    "mod.SafetyNetBlockMixin",
+    "mod.SkilledItemMixin",
+    "mod.SkilletBlockEntityMixin",
+    "mod.SkilletBlockMixin",
+    "mod.StoveBlockEntityMixin",
+    "bedrock.BaseFactoryBlockMixin",
+    "bedrock.MapPolymerBlockMixin",
+    "bedrock.PolyBaseItemMixin",
+    "bedrock.PolySkilletItemMixin",
+    "bedrock.PolymerFenceGateBlockMixin",
+    "bedrock.StateCopyFactoryBlockMixin",
+    "bedrock.WaterloggableFactoryBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+}
+
+group = 'org.geysermc.farmersdelight'
+version = '1.0.0'
+
+ext {
+	geyserApiVersion = '2.11.0'
+}
+
+repositories {
+	maven { url 'https://repo.opencollab.dev/main/' }
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly "org.geysermc.geyser:api:${geyserApiVersion}-SNAPSHOT"
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+processResources {
+	filesMatching('extension.yml') {
+		expand(
+			'id': project.name,
+			'name': 'FarmersDelightGeyserBridge',
+			'api': geyserApiVersion,
+			'version': project.version,
+			'author': 'Patbox / TeamLand'
+		)
+	}
+}
+
+jar {
+	archiveBaseName = 'farmersdelight-geyser-extension'
+}

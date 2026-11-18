@@ -1,0 +1,63 @@
+{
+  "resource_pack_name": "farmersdelight",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "farmersdelight.straw": {
+      "textures": "textures/items/straw"
+    },
+    "farmersdelight.canvas": {
+      "textures": "textures/items/canvas"
+    },
+    "farmersdelight.tree_bark": {
+      "textures": "textures/items/tree_bark"
+    },
+    "farmersdelight.rope": {
+      "textures": "textures/items/rope"
+    },
+    "farmersdelight.cabbage": {
+      "textures": "textures/items/cabbage"
+    },
+    "farmersdelight.tomato": {
+      "textures": "textures/items/tomato"
+    },
+    "farmersdelight.onion": {
+      "textures": "textures/items/onion"
+    },
+    "farmersdelight.rotten_tomato": {
+      "textures": "textures/items/rotten_tomato"
+    },
+    "farmersdelight.flint_knife": {
+      "textures": "textures/items/flint_knife"
+    },
+    "farmersdelight.iron_knife": {
+      "textures": "textures/items/iron_knife"
+    },
+    "farmersdelight.golden_knife": {
+      "textures": "textures/items/golden_knife"
+    },
+    "farmersdelight.diamond_knife": {
+      "textures": "textures/items/diamond_knife"
+    },
+    "farmersdelight.netherite_knife": {
+      "textures": "textures/items/netherite_knife"
+    },
+    "farmersdelight.cooked_rice": {
+      "textures": "textures/items/cooked_rice"
+    },
+    "farmersdelight.beef_stew": {
+      "textures": "textures/items/beef_stew"
+    },
+    "farmersdelight.chicken_soup": {
+      "textures": "textures/items/chicken_soup"
+    },
+    "farmersdelight.hamburger": {
+      "textures": "textures/items/hamburger"
+    },
+    "farmersdelight.fried_egg": {
+      "textures": "textures/items/fried_egg"
+    },
+    "farmersdelight.apple_pie_slice": {
+      "textures": "textures/items/apple_pie_slice"
+    }
+  }
+}

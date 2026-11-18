@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Farmers Delight - Geyser Resource Pack",
+    "description": "Bedrock resource pack for Farmer's Delight custom items and blocks via the Geyser bridge.",
+    "uuid": "1c1d4c6a-8e4f-4c2a-9a5b-8a2d0f3c9e71",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "d9f5b3a7-2e6e-4d1b-9c7a-0f2a8e4b6c5d",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}
