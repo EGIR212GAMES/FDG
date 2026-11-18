@@ -17,6 +17,7 @@ public final class BedrockSupport {
 
     private static boolean floodgateChecked;
     private static boolean floodgateAvailable;
+    private static Object floodgateApi;
     private static Method floodgateIsBedrock;
 
     private BedrockSupport() {
@@ -38,7 +39,7 @@ public final class BedrockSupport {
             return false;
         }
         try {
-            return (Boolean) floodgateIsBedrock.invoke(null, player.getUUID());
+            return (Boolean) floodgateIsBedrock.invoke(floodgateApi, player.getUUID());
         } catch (Throwable t) {
             return false;
         }
@@ -51,11 +52,13 @@ public final class BedrockSupport {
         floodgateChecked = true;
         try {
             Class<?> apiClass = Class.forName("org.geysermc.floodgate.api.FloodgateApi");
-            Object api = apiClass.getMethod("getInstance").invoke(null);
+            floodgateApi = apiClass.getMethod("getInstance").invoke(null);
             floodgateIsBedrock = apiClass.getMethod("isFloodgatePlayer", UUID.class);
-            floodgateAvailable = floodgateIsBedrock != null && api != null;
+            floodgateAvailable = floodgateIsBedrock != null && floodgateApi != null;
         } catch (Throwable t) {
             floodgateAvailable = false;
+            floodgateApi = null;
+            floodgateIsBedrock = null;
         }
         return floodgateAvailable;
     }

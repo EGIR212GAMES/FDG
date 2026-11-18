@@ -2,6 +2,7 @@ package org.geysermc.farmersdelight;
 
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.block.custom.CustomBlockData;
+import org.geysermc.geyser.api.block.custom.component.BoxComponent;
 import org.geysermc.geyser.api.block.custom.component.CustomBlockComponents;
 import org.geysermc.geyser.api.block.custom.component.GeometryComponent;
 import org.geysermc.geyser.api.block.custom.component.MaterialInstance;
@@ -42,6 +43,7 @@ public class FarmersDelightGeyserExtension implements Extension {
 
     @Subscribe
     public void onPostInitialize(GeyserPostInitializeEvent event) {
+        this.loadItemIds();
         this.logger().info("Loaded " + this.javaIds.size() + " Farmer's Delight item ids from " + ITEM_PROPERTIES);
     }
 
@@ -119,10 +121,9 @@ public class FarmersDelightGeyserExtension implements Extension {
                 boolean waterlogged = Boolean.parseBoolean(parts[3].trim());
                 boolean canBreak = Boolean.parseBoolean(parts[4].trim());
 
-                // The Java runtime state id for non-vanilla blocks must lie after the last vanilla
-                // block state. If the id is not a valid runtime id, skip the override to avoid
-                // rejecting the whole registration.
-                if (javaId <= 35723) {
+                // The exact runtime ID is generated from Block.BLOCK_STATE_REGISTRY on the server.
+                // Let Geyser validate it against the vanilla state registry for its Java protocol.
+                if (javaId < 0) {
                     continue;
                 }
 
@@ -133,7 +134,7 @@ public class FarmersDelightGeyserExtension implements Extension {
                         .blockHardness(hardness)
                         .waterlogged(waterlogged)
                         .canBreakWithHand(canBreak)
-                        .collision(new JavaBoundingBox[0])
+                        .collision(new JavaBoundingBox[]{new JavaBoundingBox(0.5, 0.5, 0.5, 1.0, 1.0, 1.0)})
                         .build();
                 event.registerOverride(jbs, cbd.blockStateBuilder().build());
             } catch (RuntimeException e) {
@@ -158,9 +159,18 @@ public class FarmersDelightGeyserExtension implements Extension {
     }
 
     private static CustomBlockData buildBlock(FdBlocks.FdBlock fb, String path) {
+        String renderMethod = switch (path) {
+            case "wooden_basket", "bamboo_basket", "stove", "cooking_pot", "skillet", "cutting_board" -> "alpha_test";
+            default -> "opaque";
+        };
+        BoxComponent fullBlockBox = BoxComponent.fullBox();
         CustomBlockComponents components = CustomBlockComponents.builder()
+                // Explicit selection/collision boxes make the custom block targetable and breakable
+                // on Bedrock instead of depending on client defaults.
+                .collisionBoxes(fullBlockBox)
+                .selectionBox(fullBlockBox)
                 .geometry(GeometryComponent.builder().identifier(fb.geometry()).build())
-                .materialInstance("*", MaterialInstance.builder().texture(fb.texture()).renderMethod("opaque").build())
+                .materialInstance("*", MaterialInstance.builder().texture(fb.texture()).renderMethod(renderMethod).build())
                 .displayName(fb.displayName())
                 .build();
         return CustomBlockData.builder()
@@ -172,6 +182,7 @@ public class FarmersDelightGeyserExtension implements Extension {
     }
 
     private void loadItemIds() {
+        this.javaIds.clear();
         for (String raw : this.readLines(ITEM_PROPERTIES)) {
             String line = raw.trim();
             if (line.isEmpty() || line.startsWith("#")) {

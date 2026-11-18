@@ -70,6 +70,11 @@ def write_json(path: Path, data):
     path.write_text(json.dumps(data, indent=2), encoding="utf-8")
 
 
+def atlas_entries(textures):
+    """Return Bedrock's texture-data entry format for a single texture per key."""
+    return {name: {"textures": [path]} for name, path in sorted(textures.items())}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mod-jar", required=True, type=Path)
@@ -90,12 +95,12 @@ def main():
     write_json(out / "textures/item_texture.json", {
         "resource_pack_name": NS,
         "texture_name": "atlas.items",
-        "texture_data": item_textures,
+        "texture_data": atlas_entries(item_textures),
     })
     write_json(out / "textures/terrain_texture.json", {
         "resource_pack_name": NS,
         "texture_name": "atlas.terrain",
-        "texture_data": block_textures,
+        "texture_data": atlas_entries(block_textures),
     })
 
     if args.skeleton.exists():

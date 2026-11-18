@@ -10,13 +10,13 @@ The bridge is implemented **inside the Polymer patch mod** (no separate jar need
     `WaterloggableFactoryBlockMixin`, `StateCopyFactoryBlockMixin`) for Bedrock players:
     for Floodgate players the authentic `farmersdelight:*` id is sent instead of Polymer's fallback.
 - `src/main/java/eu/pb4/farmersdelightpatch/impl/bedrock/BedrockCommands.java`
-  — command `/fdg dumpids [path]` writes the network id mapping and `/fdg status`.
+  — `/fdg dumpids [path]` writes item IDs, `/fdg dumpblocks [path]` writes block-state IDs, and `/fdg status` checks Floodgate.
 
 ## What it does
 
 1. For Bedrock players, block/item packets carry the real FD registry values, so Geyser's custom
    content mapping (the `geyser-extension` + `custom_mappings` + Bedrock resource pack) becomes active.
-2. `/fdg dumpids` writes `farmersdelight.properties` in the format consumed by the extension.
+ 2. `/fdg dumpids` writes `farmersdelight.properties`; `/fdg dumpblocks` writes `farmersdelight_blocks.properties` in the format consumed by the extension.
 
 ## Enable/disable
 
@@ -25,11 +25,11 @@ The bridge is implemented **inside the Polymer patch mod** (no separate jar need
 
 ## Usage
 
-1. Install Floodgate-Fabric on the server.
-2. Start, join as Bedrock player, run `/fdg dumpids`.
-3. Copy the produced `farmersdelight.properties` into Geyser's extension data folder
+ 1. Install Floodgate-Fabric on the server.
+ 2. Start, join as Bedrock player, run `/fdg dumpids` and `/fdg dumpblocks`.
+ 3. Copy both produced properties files into Geyser's extension data folder
    (`config/Geyser-Fabric/extensions/geyser-extension/`).
-4. Ensure Geyser has `enable-custom-content: true`, the Bedrock resource pack, and the block mappings.
+ 4. Ensure Geyser has `enable-custom-content: true`, the generated Bedrock resource pack, and the extension JAR. The extension registers the blocks through the Geyser API; do not also install the static block JSON mapping.
 
 ## Fixed limitations
 
@@ -39,7 +39,7 @@ The bridge is implemented **inside the Polymer patch mod** (no separate jar need
 - **Textures**: `../tools/build_bedrock_rp.py` extracts the real PNG textures from the FD mod jar
   and generates `item_texture.json`/`terrain_texture.json` + a `.mcpack`.
 - **Food values**: `FdItems.java` now uses the exact values from the mod's `FoodValues`.
-- **Block visuals**: custom block mapping (JSON) + Bedrock geometry are provided.
+- **Block visuals**: custom block mapping via the Geyser extension API + Bedrock geometry are provided.
 
 ## Implemented (this iteration)
 

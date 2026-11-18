@@ -20,7 +20,7 @@ mods on **your** server. The extension reads those ids from
 `farmersdelight.properties` in its data folder:
 
 ```
-config/Geyser-<platform>/extensions/farmersdelight-geyser-extension/farmersdelight.properties
+config/Geyser-<platform>/extensions/geyser-extension/farmersdelight.properties
 ```
 
 Format:
@@ -31,6 +31,7 @@ item.farmersdelight.hamburger=73
 ```
 
 This file is generated on the server by the bridge mod (see `../server_tests/bridge-mod/`).
+Run both `/fdg dumpids` and `/fdg dumpblocks`; the latter creates `farmersdelight_blocks.properties` in the same extension data folder.
 Items without an entry are skipped with a warning.
 
 > The food values in `FdItems.java` are taken from the mod's `FoodValues`.
@@ -42,17 +43,18 @@ Build the Bedrock resource pack from the actual FD mod jar:
 ```
 python server_tests/tools/build_bedrock_rp.py \
     --mod-jar path/to/farmers-delight-refabricated.jar \
-    --out bedrock-resourcepack-built --mcpack bedrock-resourcepack-built.mcpack
+    --skeleton bedrock-resourcepack --out bedrock-resourcepack-built --mcpack bedrock-resourcepack-built.mcpack
 ```
 
 This extracts the real PNG textures and generates `item_texture.json`/`terrain_texture.json`.
 Place the `.mcpack` into Geyser's `packs/`.
+The root `bedrock-resourcepack/` folder is only a model/manifest skeleton; do not install it directly.
 
 ## Required setup on Geyser
 
 - `gameplay.enable-custom-content: true` in Geyser's `config.yml`.
-- Bedrock resource pack (built from `../bedrock-resourcepack/`) in Geyser's `packs/`.
-- Block mappings (`custom_mappings/farmersdelight_blocks.json`) in Geyser's `custom_mappings/`.
+- A generated Bedrock resource pack (built from the actual Farmer's Delight JAR) in Geyser's `packs/`.
+- The extension registers block-state mappings through the Geyser API; do not also install the static JSON mapping file.
 
 ## Critical prerequisite: the server bridge
 

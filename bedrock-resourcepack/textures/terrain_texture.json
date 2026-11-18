@@ -3,61 +3,61 @@
   "texture_name": "atlas.terrain",
   "texture_data": {
     "farmersdelight.rich_soil": {
-      "textures": "textures/blocks/rich_soil"
+      "textures": ["textures/blocks/rich_soil"]
     },
-    "farmersdelight.organic_compost": {
-      "textures": "textures/blocks/organic_compost"
+    "farmersdelight.organic_compost_stage0": {
+      "textures": ["textures/blocks/organic_compost_stage0"]
     },
-    "farmersdelight.rice_bale": {
-      "textures": "textures/blocks/rice_bale"
+    "farmersdelight.rice_bale_side": {
+      "textures": ["textures/blocks/rice_bale_side"]
     },
-    "farmersdelight.rice_bag": {
-      "textures": "textures/blocks/rice_bag"
+    "farmersdelight.rice_bag_side": {
+      "textures": ["textures/blocks/rice_bag_side"]
     },
-    "farmersdelight.straw_bale": {
-      "textures": "textures/blocks/straw_bale"
+    "farmersdelight.straw_bale_side": {
+      "textures": ["textures/blocks/straw_bale_side"]
     },
-    "farmersdelight.carrot_crate": {
-      "textures": "textures/blocks/carrot_crate"
+    "farmersdelight.carrot_crate_side": {
+      "textures": ["textures/blocks/carrot_crate_side"]
     },
-    "farmersdelight.potato_crate": {
-      "textures": "textures/blocks/potato_crate"
+    "farmersdelight.potato_crate_side": {
+      "textures": ["textures/blocks/potato_crate_side"]
     },
-    "farmersdelight.beetroot_crate": {
-      "textures": "textures/blocks/beetroot_crate"
+    "farmersdelight.beetroot_crate_side": {
+      "textures": ["textures/blocks/beetroot_crate_side"]
     },
-    "farmersdelight.cabbage_crate": {
-      "textures": "textures/blocks/cabbage_crate"
+    "farmersdelight.cabbage_crate_side": {
+      "textures": ["textures/blocks/cabbage_crate_side"]
     },
-    "farmersdelight.tomato_crate": {
-      "textures": "textures/blocks/tomato_crate"
+    "farmersdelight.tomato_crate_side": {
+      "textures": ["textures/blocks/tomato_crate_side"]
     },
-    "farmersdelight.onion_crate": {
-      "textures": "textures/blocks/onion_crate"
+    "farmersdelight.onion_crate_side": {
+      "textures": ["textures/blocks/onion_crate_side"]
     },
     "farmersdelight.tatami": {
-      "textures": "textures/blocks/tatami"
+      "textures": ["textures/blocks/tatami"]
     },
     "farmersdelight.canvas_rug": {
-      "textures": "textures/blocks/canvas_rug"
+      "textures": ["textures/blocks/canvas_rug"]
     },
-    "farmersdelight.wooden_basket": {
-      "textures": "textures/blocks/wooden_basket"
+    "farmersdelight.wooden_basket_side": {
+      "textures": ["textures/blocks/wooden_basket_side"]
     },
-    "farmersdelight.bamboo_basket": {
-      "textures": "textures/blocks/bamboo_basket"
+    "farmersdelight.bamboo_basket_side": {
+      "textures": ["textures/blocks/bamboo_basket_side"]
     },
-    "farmersdelight.stove": {
-      "textures": "textures/blocks/stove"
+    "farmersdelight.stove_side": {
+      "textures": ["textures/blocks/stove_side"]
     },
-    "farmersdelight.cooking_pot": {
-      "textures": "textures/blocks/cooking_pot"
+    "farmersdelight.cooking_pot_side": {
+      "textures": ["textures/blocks/cooking_pot_side"]
     },
-    "farmersdelight.skillet": {
-      "textures": "textures/blocks/skillet"
+    "farmersdelight.skillet_side": {
+      "textures": ["textures/blocks/skillet_side"]
     },
     "farmersdelight.cutting_board": {
-      "textures": "textures/blocks/cutting_board"
+      "textures": ["textures/blocks/cutting_board"]
     }
   }
 }

@@ -16,7 +16,7 @@
       "display_name": "Organic Compost",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.organic_compost",
+          "texture": "farmersdelight.organic_compost_stage0",
           "render_method": "opaque"
         }
       }
@@ -26,7 +26,7 @@
       "display_name": "Rice Bale",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.rice_bale",
+          "texture": "farmersdelight.rice_bale_side",
           "render_method": "opaque"
         }
       }
@@ -36,7 +36,7 @@
       "display_name": "Rice Bag",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.rice_bag",
+          "texture": "farmersdelight.rice_bag_side",
           "render_method": "opaque"
         }
       }
@@ -46,7 +46,7 @@
       "display_name": "Straw Bale",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.straw_bale",
+          "texture": "farmersdelight.straw_bale_side",
           "render_method": "opaque"
         }
       }
@@ -56,7 +56,7 @@
       "display_name": "Carrot Crate",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.carrot_crate",
+          "texture": "farmersdelight.carrot_crate_side",
           "render_method": "opaque"
         }
       }
@@ -66,7 +66,7 @@
       "display_name": "Potato Crate",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.potato_crate",
+          "texture": "farmersdelight.potato_crate_side",
           "render_method": "opaque"
         }
       }
@@ -76,7 +76,7 @@
       "display_name": "Beetroot Crate",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.beetroot_crate",
+          "texture": "farmersdelight.beetroot_crate_side",
           "render_method": "opaque"
         }
       }
@@ -86,7 +86,7 @@
       "display_name": "Cabbage Crate",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.cabbage_crate",
+          "texture": "farmersdelight.cabbage_crate_side",
           "render_method": "opaque"
         }
       }
@@ -96,7 +96,7 @@
       "display_name": "Tomato Crate",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.tomato_crate",
+          "texture": "farmersdelight.tomato_crate_side",
           "render_method": "opaque"
         }
       }
@@ -106,7 +106,7 @@
       "display_name": "Onion Crate",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.onion_crate",
+          "texture": "farmersdelight.onion_crate_side",
           "render_method": "opaque"
         }
       }
@@ -137,7 +137,7 @@
       "geometry": "geometry.farmersdelight.basket",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.wooden_basket",
+          "texture": "farmersdelight.wooden_basket_side",
           "render_method": "alpha_test"
         }
       }
@@ -148,7 +148,7 @@
       "geometry": "geometry.farmersdelight.basket",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.bamboo_basket",
+          "texture": "farmersdelight.bamboo_basket_side",
           "render_method": "alpha_test"
         }
       }
@@ -159,7 +159,7 @@
       "geometry": "geometry.farmersdelight.stove",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.stove",
+          "texture": "farmersdelight.stove_side",
           "render_method": "alpha_test"
         }
       }
@@ -170,7 +170,7 @@
       "geometry": "geometry.farmersdelight.cooking_pot",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.cooking_pot",
+          "texture": "farmersdelight.cooking_pot_side",
           "render_method": "alpha_test"
         }
       }
@@ -181,7 +181,7 @@
       "geometry": "geometry.farmersdelight.skillet",
       "material_instances": {
         "*": {
-          "texture": "farmersdelight.skillet",
+          "texture": "farmersdelight.skillet_side",
           "render_method": "alpha_test"
         }
       }

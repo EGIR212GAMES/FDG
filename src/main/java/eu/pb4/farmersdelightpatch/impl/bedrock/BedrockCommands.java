@@ -76,11 +76,15 @@ public final class BedrockCommands {
             }
             int groupId = BuiltInRegistries.BLOCK.getId(block);
             for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+                // Geyser needs the global runtime ID of this exact block state, not the block registry ID.
+                int javaId = Block.BLOCK_STATE_REGISTRY.getId(state);
+                if (javaId < 0) {
+                    continue;
+                }
                 String ident = formatState(id, state);
                 boolean waterlogged = state.hasProperty(BlockStateProperties.WATERLOGGED)
                         && Boolean.TRUE.equals(state.getValue(BlockStateProperties.WATERLOGGED));
-                // Global block-state network id is not exposed via the public API; fall back to the block id.
-                lines.add("block." + ident + "=" + groupId + "," + groupId + ",1.5," + waterlogged + ",true");
+                lines.add("block." + ident + "=" + javaId + "," + groupId + ",1.5," + waterlogged + ",true");
             }
         }
         lines.sort(String::compareTo);
