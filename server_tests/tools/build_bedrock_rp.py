@@ -11,6 +11,7 @@ Usage:
         [--skeleton path/to/bedrock-resourcepack] [--out dir] [--mcpack out.mcpack]
 """
 import argparse
+import hashlib
 import json
 import shutil
 import zipfile
@@ -75,20 +76,37 @@ def atlas_entries(textures):
     return {name: {"textures": [path]} for name, path in sorted(textures.items())}
 
 
+def content_version(out: Path):
+    """Derive a Bedrock pack revision from its contents to invalidate stale client caches."""
+    digest = hashlib.sha256()
+    for file in sorted(path for path in out.rglob("*") if path.is_file() and path.name != "manifest.json"):
+        digest.update(file.relative_to(out).as_posix().encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(file.read_bytes())
+    # Bedrock expects a three-part integer version. A 16-bit content revision is ample here.
+    revision = int.from_bytes(digest.digest()[:2], "big") + 1
+    return [1, 0, revision]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mod-jar", required=True, type=Path)
     ap.add_argument("--skeleton", type=Path, default=Path("bedrock-resourcepack"))
     ap.add_argument("--out", type=Path, default=Path("bedrock-resourcepack-built"))
     ap.add_argument("--mcpack", type=Path, default=Path("bedrock-resourcepack-built.mcpack"))
+    ap.add_argument(
+        "--icon-manifest",
+        type=Path,
+        default=Path(__file__).resolve().parents[2]
+        / "geyser-extension/src/main/resources/farmersdelight-item-icons.txt",
+        help="Write the exact item_texture.json shorthand keys consumed by the Geyser extension.",
+    )
     args = ap.parse_args()
 
     out = args.out
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True, exist_ok=True)
-
-    write_json(out / "manifest.json", MANIFEST)
 
     item_textures, block_textures = extract_textures(args.mod_jar, out)
 
@@ -108,6 +126,16 @@ def main():
         if geo.exists():
             shutil.copytree(geo, out / "models", dirs_exist_ok=True)
 
+    # Keep the Java extension in sync with the exact set of texture shorthands in this pack.
+    args.icon_manifest.parent.mkdir(parents=True, exist_ok=True)
+    args.icon_manifest.write_text("\n".join(sorted(item_textures)) + "\n", encoding="utf-8")
+
+    manifest = json.loads(json.dumps(MANIFEST))
+    pack_version = content_version(out)
+    manifest["header"]["version"] = pack_version
+    manifest["modules"][0]["version"] = pack_version
+    write_json(out / "manifest.json", manifest)
+
     if args.mcpack:
         with zipfile.ZipFile(args.mcpack, "w", zipfile.ZIP_DEFLATED) as z:
             for f in out.rglob("*"):
@@ -116,6 +144,8 @@ def main():
 
     print(f"Items mapped: {len(item_textures)}")
     print(f"Blocks mapped: {len(block_textures)}")
+    print(f"Resource pack version: {'.'.join(map(str, pack_version))}")
+    print(f"Item icon manifest written to: {args.icon_manifest}")
     print(f"Resource pack written to: {out}")
     print(f"mcpack written to: {args.mcpack}")
 

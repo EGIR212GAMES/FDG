@@ -21,12 +21,16 @@ import org.geysermc.geyser.api.item.custom.v2.component.java.JavaItemDataCompone
 import org.geysermc.geyser.api.util.Identifier;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Geyser extension that maps Farmer's Delight items (registry namespace {@code farmersdelight})
@@ -55,7 +59,12 @@ public class FarmersDelightGeyserExtension implements Extension {
     @Subscribe
     public void onDefineCustomItems(GeyserDefineCustomItemsEvent event) {
         this.loadItemIds();
+        Set<String> registeredItems = new HashSet<>();
+
+        // These entries have explicit food/tool settings and should take precedence over the
+        // generic icon-only fallback below.
         for (FdItem item : FdItems.ALL) {
+            registeredItems.add(item.javaName());
             int javaId = this.javaIds.getOrDefault(item.javaName(), -1);
             if (javaId < 0) {
                 this.logger().warning("No network id recorded for " + item.javaName() + " - run the id generator on the server.");
@@ -70,9 +79,10 @@ public class FarmersDelightGeyserExtension implements Extension {
 
         // Block items are non-vanilla Java items too. registerItemOverride() only replaces an
         // existing Java item mapping; it does not create the mapping for a modded item. Register
-        // each block item as a real non-vanilla custom item and attach a Bedrock block placer.
+        // each known block item as a real non-vanilla custom item and attach a Bedrock block placer.
         for (FdBlocks.FdBlock block : FdBlocks.ALL) {
             String javaName = "farmersdelight:" + block.javaPath();
+            registeredItems.add(javaName);
             int javaId = this.javaIds.getOrDefault(javaName, -1);
             if (javaId < 0) {
                 this.logger().warning("No network id recorded for block item " + javaName
@@ -96,6 +106,49 @@ public class FarmersDelightGeyserExtension implements Extension {
                 this.logger().warning("Failed to register block item " + javaName + ": " + e.getMessage());
             }
         }
+
+        // FdItems and FdBlocks intentionally contain the items with special behaviour. The mod
+        // has additional registry items (canvas signs, pie blocks, tatami variants, newer items,
+        // etc.) that also have PNGs in the resource pack. Register every remaining Java item ID
+        // only when its exact icon shorthand exists in the generated atlas manifest.
+        Set<String> iconKeys = this.loadItemIconKeys();
+        int autoRegistered = 0;
+        List<Map.Entry<String, Integer>> remainingItems = this.javaIds.entrySet().stream()
+                .filter(entry -> !registeredItems.contains(entry.getKey()))
+                .sorted(Map.Entry.comparingByKey())
+                .toList();
+        for (Map.Entry<String, Integer> entry : remainingItems) {
+            String javaName = entry.getKey();
+            if (entry.getValue() < 0) {
+                this.logger().warning("Invalid negative network ID for " + javaName + "; skipping automatic registration.");
+                continue;
+            }
+            String iconKey = itemIconKey(javaName);
+            if (!iconKeys.contains(iconKey)) {
+                this.logger().warning("No resource-pack icon " + iconKey + " for " + javaName
+                        + "; item was not auto-registered. Rebuild the Bedrock pack from the matching Farmer's Delight JAR.");
+                continue;
+            }
+
+            String path = pathOf(javaName);
+            int maxStackSize = path.endsWith("_knife") ? 1 : 64;
+            try {
+                NonVanillaCustomItemDefinition definition = NonVanillaCustomItemDefinition.builder(
+                                Identifier.of(javaName), Identifier.of(javaName), entry.getValue())
+                        .displayName(displayNameFromPath(path))
+                        .bedrockOptions(CustomItemBedrockOptions.builder()
+                                .creativeCategory(CreativeCategory.ITEMS)
+                                .icon(iconKey))
+                        .component(JavaItemDataComponents.MAX_STACK_SIZE, maxStackSize)
+                        .build();
+                event.register(definition);
+                autoRegistered++;
+            } catch (RuntimeException e) {
+                this.logger().warning("Failed to register additional item " + javaName + ": " + e.getMessage());
+            }
+        }
+        this.logger().info("Automatically registered " + autoRegistered
+                + " additional Farmer's Delight items using resource-pack icon keys.");
     }
 
     @Subscribe
@@ -208,6 +261,42 @@ public class FarmersDelightGeyserExtension implements Extension {
                 .creativeCategory(CreativeCategory.CONSTRUCTION)
                 .components(components)
                 .build();
+    }
+
+    private Set<String> loadItemIconKeys() {
+        try (var stream = FarmersDelightGeyserExtension.class.getResourceAsStream("/farmersdelight-item-icons.txt")) {
+            if (stream == null) {
+                this.logger().warning("Missing farmersdelight-item-icons.txt in the extension JAR. "
+                        + "Run the Bedrock resource-pack builder, then rebuild the extension.");
+                return Set.of();
+            }
+            return new String(stream.readAllBytes(), StandardCharsets.UTF_8)
+                    .lines()
+                    .map(String::trim)
+                    .filter(line -> !line.isEmpty() && !line.startsWith("#"))
+                    .collect(Collectors.toUnmodifiableSet());
+        } catch (IOException e) {
+            this.logger().warning("Could not read item icon manifest: " + e.getMessage());
+            return Set.of();
+        }
+    }
+
+    private static String itemIconKey(String javaIdentifier) {
+        return javaIdentifier.replace(':', '.').replace('/', '_');
+    }
+
+    private static String displayNameFromPath(String path) {
+        StringBuilder displayName = new StringBuilder();
+        for (String word : path.replace('/', ' ').replace('_', ' ').split("\\s+")) {
+            if (word.isEmpty()) {
+                continue;
+            }
+            if (displayName.length() > 0) {
+                displayName.append(' ');
+            }
+            displayName.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
+        }
+        return displayName.length() == 0 ? path : displayName.toString();
     }
 
     private void loadItemIds() {

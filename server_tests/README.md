@@ -27,17 +27,24 @@ Java 26.3, Fabric loader `0.19.5`.
 
 1. `./run.ps1` (or `./run.sh`) to create the Fabric server.
 2. Copy the mod jars into `mods/`.
- 3. Generate both ID mappings:
-   - Start the server, join as Bedrock, then run `/fdg dumpids` and `/fdg dumpblocks`.
-   - Copy `farmersdelight.properties` and `farmersdelight_blocks.properties` into
-     `config/Geyser-Fabric/extensions/geyser-extension/`.
- 4. Build the resource pack from the real FD textures (run this from `server_tests/`):
+3. Start the server and run `/fdg dumpids` and `/fdg dumpblocks`.
+4. Copy `farmersdelight.properties` and `farmersdelight_blocks.properties` into
+   `config/Geyser-Fabric/extensions/geyser-extension/`.
+5. Build the Bedrock resource pack from the exact Farmer's Delight JAR (run from `server_tests/`):
    ```
    python tools/build_bedrock_rp.py --mod-jar mods/farmers-delight-refabricated.jar \
        --skeleton ../bedrock-resourcepack --out packs/rp-built --mcpack packs/farmers-delight-rp.mcpack
    ```
- 5. Ensure Geyser config has `gameplay.enable-custom-content: true` and the extension JAR is installed.
- 6. Start the server. Bedrock players connect to the Bedrock port (default 19132).
+   The generator also refreshes `geyser-extension/src/main/resources/farmersdelight-item-icons.txt`
+   and writes a content-derived manifest version so Bedrock clients do not keep a stale cached pack.
+6. Rebuild the Geyser extension **after** running the pack generator, so the extension JAR contains
+   the exact icon-key list for that resource pack:
+   ```
+   ./gradlew :geyser-extension:build
+   ```
+   Install the newly built JAR and the newly generated `packs/farmers-delight-rp.mcpack`.
+7. Ensure Geyser has `gameplay.enable-custom-content: true` and restart the server.
+8. Bedrock players reconnect and accept the updated resource pack if prompted.
 
 ## Critical note: the server bridge
 

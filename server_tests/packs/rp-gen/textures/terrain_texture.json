@@ -1,0 +1,1251 @@
+{
+  "resource_pack_name": "farmersdelight",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "farmersdelight.acacia_cabinet_front": {
+      "textures": [
+        "textures/blocks/acacia_cabinet_front"
+      ]
+    },
+    "farmersdelight.acacia_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/acacia_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.acacia_cabinet_side": {
+      "textures": [
+        "textures/blocks/acacia_cabinet_side"
+      ]
+    },
+    "farmersdelight.acacia_cabinet_top": {
+      "textures": [
+        "textures/blocks/acacia_cabinet_top"
+      ]
+    },
+    "farmersdelight.apple_pie_inner": {
+      "textures": [
+        "textures/blocks/apple_pie_inner"
+      ]
+    },
+    "farmersdelight.apple_pie_top": {
+      "textures": [
+        "textures/blocks/apple_pie_top"
+      ]
+    },
+    "farmersdelight.bamboo_basket_bottom": {
+      "textures": [
+        "textures/blocks/bamboo_basket_bottom"
+      ]
+    },
+    "farmersdelight.bamboo_basket_handle": {
+      "textures": [
+        "textures/blocks/bamboo_basket_handle"
+      ]
+    },
+    "farmersdelight.bamboo_basket_side": {
+      "textures": [
+        "textures/blocks/bamboo_basket_side"
+      ]
+    },
+    "farmersdelight.bamboo_basket_top": {
+      "textures": [
+        "textures/blocks/bamboo_basket_top"
+      ]
+    },
+    "farmersdelight.bamboo_cabinet_front": {
+      "textures": [
+        "textures/blocks/bamboo_cabinet_front"
+      ]
+    },
+    "farmersdelight.bamboo_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/bamboo_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.bamboo_cabinet_side": {
+      "textures": [
+        "textures/blocks/bamboo_cabinet_side"
+      ]
+    },
+    "farmersdelight.bamboo_cabinet_top": {
+      "textures": [
+        "textures/blocks/bamboo_cabinet_top"
+      ]
+    },
+    "farmersdelight.beetroot_crate_side": {
+      "textures": [
+        "textures/blocks/beetroot_crate_side"
+      ]
+    },
+    "farmersdelight.beetroot_crate_top": {
+      "textures": [
+        "textures/blocks/beetroot_crate_top"
+      ]
+    },
+    "farmersdelight.birch_cabinet_front": {
+      "textures": [
+        "textures/blocks/birch_cabinet_front"
+      ]
+    },
+    "farmersdelight.birch_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/birch_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.birch_cabinet_side": {
+      "textures": [
+        "textures/blocks/birch_cabinet_side"
+      ]
+    },
+    "farmersdelight.birch_cabinet_top": {
+      "textures": [
+        "textures/blocks/birch_cabinet_top"
+      ]
+    },
+    "farmersdelight.black_canvas_sign": {
+      "textures": [
+        "textures/blocks/black_canvas_sign"
+      ]
+    },
+    "farmersdelight.black_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/black_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.blue_canvas_sign": {
+      "textures": [
+        "textures/blocks/blue_canvas_sign"
+      ]
+    },
+    "farmersdelight.blue_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/blue_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.bowl": {
+      "textures": [
+        "textures/blocks/bowl"
+      ]
+    },
+    "farmersdelight.brown_canvas_sign": {
+      "textures": [
+        "textures/blocks/brown_canvas_sign"
+      ]
+    },
+    "farmersdelight.brown_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/brown_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.brown_mushroom_colony_stage0": {
+      "textures": [
+        "textures/blocks/brown_mushroom_colony_stage0"
+      ]
+    },
+    "farmersdelight.brown_mushroom_colony_stage1": {
+      "textures": [
+        "textures/blocks/brown_mushroom_colony_stage1"
+      ]
+    },
+    "farmersdelight.brown_mushroom_colony_stage2": {
+      "textures": [
+        "textures/blocks/brown_mushroom_colony_stage2"
+      ]
+    },
+    "farmersdelight.brown_mushroom_colony_stage3": {
+      "textures": [
+        "textures/blocks/brown_mushroom_colony_stage3"
+      ]
+    },
+    "farmersdelight.budding_tomatoes_stage0": {
+      "textures": [
+        "textures/blocks/budding_tomatoes_stage0"
+      ]
+    },
+    "farmersdelight.budding_tomatoes_stage1": {
+      "textures": [
+        "textures/blocks/budding_tomatoes_stage1"
+      ]
+    },
+    "farmersdelight.budding_tomatoes_stage2": {
+      "textures": [
+        "textures/blocks/budding_tomatoes_stage2"
+      ]
+    },
+    "farmersdelight.budding_tomatoes_stage3": {
+      "textures": [
+        "textures/blocks/budding_tomatoes_stage3"
+      ]
+    },
+    "farmersdelight.cabbage_crate_side": {
+      "textures": [
+        "textures/blocks/cabbage_crate_side"
+      ]
+    },
+    "farmersdelight.cabbage_crate_top": {
+      "textures": [
+        "textures/blocks/cabbage_crate_top"
+      ]
+    },
+    "farmersdelight.cabbages_stage0": {
+      "textures": [
+        "textures/blocks/cabbages_stage0"
+      ]
+    },
+    "farmersdelight.cabbages_stage1": {
+      "textures": [
+        "textures/blocks/cabbages_stage1"
+      ]
+    },
+    "farmersdelight.cabbages_stage2": {
+      "textures": [
+        "textures/blocks/cabbages_stage2"
+      ]
+    },
+    "farmersdelight.cabbages_stage3": {
+      "textures": [
+        "textures/blocks/cabbages_stage3"
+      ]
+    },
+    "farmersdelight.cabbages_stage4": {
+      "textures": [
+        "textures/blocks/cabbages_stage4"
+      ]
+    },
+    "farmersdelight.cabbages_stage5": {
+      "textures": [
+        "textures/blocks/cabbages_stage5"
+      ]
+    },
+    "farmersdelight.cabbages_stage6": {
+      "textures": [
+        "textures/blocks/cabbages_stage6"
+      ]
+    },
+    "farmersdelight.cabbages_stage7": {
+      "textures": [
+        "textures/blocks/cabbages_stage7"
+      ]
+    },
+    "farmersdelight.canvas_rug": {
+      "textures": [
+        "textures/blocks/canvas_rug"
+      ]
+    },
+    "farmersdelight.canvas_rug_fraying": {
+      "textures": [
+        "textures/blocks/canvas_rug_fraying"
+      ]
+    },
+    "farmersdelight.canvas_sign": {
+      "textures": [
+        "textures/blocks/canvas_sign"
+      ]
+    },
+    "farmersdelight.carrot_crate_side": {
+      "textures": [
+        "textures/blocks/carrot_crate_side"
+      ]
+    },
+    "farmersdelight.carrot_crate_top": {
+      "textures": [
+        "textures/blocks/carrot_crate_top"
+      ]
+    },
+    "farmersdelight.cherry_cabinet_front": {
+      "textures": [
+        "textures/blocks/cherry_cabinet_front"
+      ]
+    },
+    "farmersdelight.cherry_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/cherry_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.cherry_cabinet_side": {
+      "textures": [
+        "textures/blocks/cherry_cabinet_side"
+      ]
+    },
+    "farmersdelight.cherry_cabinet_top": {
+      "textures": [
+        "textures/blocks/cherry_cabinet_top"
+      ]
+    },
+    "farmersdelight.chocolate_pie_inner": {
+      "textures": [
+        "textures/blocks/chocolate_pie_inner"
+      ]
+    },
+    "farmersdelight.chocolate_pie_top": {
+      "textures": [
+        "textures/blocks/chocolate_pie_top"
+      ]
+    },
+    "farmersdelight.cooking_pot_bottom": {
+      "textures": [
+        "textures/blocks/cooking_pot_bottom"
+      ]
+    },
+    "farmersdelight.cooking_pot_handle": {
+      "textures": [
+        "textures/blocks/cooking_pot_handle"
+      ]
+    },
+    "farmersdelight.cooking_pot_parts": {
+      "textures": [
+        "textures/blocks/cooking_pot_parts"
+      ]
+    },
+    "farmersdelight.cooking_pot_side": {
+      "textures": [
+        "textures/blocks/cooking_pot_side"
+      ]
+    },
+    "farmersdelight.cooking_pot_top": {
+      "textures": [
+        "textures/blocks/cooking_pot_top"
+      ]
+    },
+    "farmersdelight.crate_bottom": {
+      "textures": [
+        "textures/blocks/crate_bottom"
+      ]
+    },
+    "farmersdelight.crimson_cabinet_front": {
+      "textures": [
+        "textures/blocks/crimson_cabinet_front"
+      ]
+    },
+    "farmersdelight.crimson_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/crimson_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.crimson_cabinet_side": {
+      "textures": [
+        "textures/blocks/crimson_cabinet_side"
+      ]
+    },
+    "farmersdelight.crimson_cabinet_top": {
+      "textures": [
+        "textures/blocks/crimson_cabinet_top"
+      ]
+    },
+    "farmersdelight.cutting_board": {
+      "textures": [
+        "textures/blocks/cutting_board"
+      ]
+    },
+    "farmersdelight.cyan_canvas_sign": {
+      "textures": [
+        "textures/blocks/cyan_canvas_sign"
+      ]
+    },
+    "farmersdelight.cyan_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/cyan_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.dark_oak_cabinet_front": {
+      "textures": [
+        "textures/blocks/dark_oak_cabinet_front"
+      ]
+    },
+    "farmersdelight.dark_oak_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/dark_oak_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.dark_oak_cabinet_side": {
+      "textures": [
+        "textures/blocks/dark_oak_cabinet_side"
+      ]
+    },
+    "farmersdelight.dark_oak_cabinet_top": {
+      "textures": [
+        "textures/blocks/dark_oak_cabinet_top"
+      ]
+    },
+    "farmersdelight.gleaming_salad": {
+      "textures": [
+        "textures/blocks/gleaming_salad"
+      ]
+    },
+    "farmersdelight.gleaming_salad_details": {
+      "textures": [
+        "textures/blocks/gleaming_salad_details"
+      ]
+    },
+    "farmersdelight.gleaming_salad_leftovers": {
+      "textures": [
+        "textures/blocks/gleaming_salad_leftovers"
+      ]
+    },
+    "farmersdelight.gray_canvas_sign": {
+      "textures": [
+        "textures/blocks/gray_canvas_sign"
+      ]
+    },
+    "farmersdelight.gray_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/gray_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.green_canvas_sign": {
+      "textures": [
+        "textures/blocks/green_canvas_sign"
+      ]
+    },
+    "farmersdelight.green_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/green_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.heating_tray_side": {
+      "textures": [
+        "textures/blocks/heating_tray_side"
+      ]
+    },
+    "farmersdelight.heating_tray_top": {
+      "textures": [
+        "textures/blocks/heating_tray_top"
+      ]
+    },
+    "farmersdelight.honey_glazed_ham": {
+      "textures": [
+        "textures/blocks/honey_glazed_ham"
+      ]
+    },
+    "farmersdelight.honey_glazed_ham_details": {
+      "textures": [
+        "textures/blocks/honey_glazed_ham_details"
+      ]
+    },
+    "farmersdelight.honey_glazed_ham_leftovers": {
+      "textures": [
+        "textures/blocks/honey_glazed_ham_leftovers"
+      ]
+    },
+    "farmersdelight.honey_glazed_ham_side_dish": {
+      "textures": [
+        "textures/blocks/honey_glazed_ham_side_dish"
+      ]
+    },
+    "farmersdelight.jungle_cabinet_front": {
+      "textures": [
+        "textures/blocks/jungle_cabinet_front"
+      ]
+    },
+    "farmersdelight.jungle_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/jungle_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.jungle_cabinet_side": {
+      "textures": [
+        "textures/blocks/jungle_cabinet_side"
+      ]
+    },
+    "farmersdelight.jungle_cabinet_top": {
+      "textures": [
+        "textures/blocks/jungle_cabinet_top"
+      ]
+    },
+    "farmersdelight.light_blue_canvas_sign": {
+      "textures": [
+        "textures/blocks/light_blue_canvas_sign"
+      ]
+    },
+    "farmersdelight.light_blue_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/light_blue_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.light_gray_canvas_sign": {
+      "textures": [
+        "textures/blocks/light_gray_canvas_sign"
+      ]
+    },
+    "farmersdelight.light_gray_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/light_gray_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.lime_canvas_sign": {
+      "textures": [
+        "textures/blocks/lime_canvas_sign"
+      ]
+    },
+    "farmersdelight.lime_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/lime_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.magenta_canvas_sign": {
+      "textures": [
+        "textures/blocks/magenta_canvas_sign"
+      ]
+    },
+    "farmersdelight.magenta_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/magenta_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.mangrove_cabinet_front": {
+      "textures": [
+        "textures/blocks/mangrove_cabinet_front"
+      ]
+    },
+    "farmersdelight.mangrove_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/mangrove_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.mangrove_cabinet_side": {
+      "textures": [
+        "textures/blocks/mangrove_cabinet_side"
+      ]
+    },
+    "farmersdelight.mangrove_cabinet_top": {
+      "textures": [
+        "textures/blocks/mangrove_cabinet_top"
+      ]
+    },
+    "farmersdelight.oak_cabinet_front": {
+      "textures": [
+        "textures/blocks/oak_cabinet_front"
+      ]
+    },
+    "farmersdelight.oak_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/oak_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.oak_cabinet_side": {
+      "textures": [
+        "textures/blocks/oak_cabinet_side"
+      ]
+    },
+    "farmersdelight.oak_cabinet_top": {
+      "textures": [
+        "textures/blocks/oak_cabinet_top"
+      ]
+    },
+    "farmersdelight.onion_crate_side": {
+      "textures": [
+        "textures/blocks/onion_crate_side"
+      ]
+    },
+    "farmersdelight.onion_crate_top": {
+      "textures": [
+        "textures/blocks/onion_crate_top"
+      ]
+    },
+    "farmersdelight.onions_stage0": {
+      "textures": [
+        "textures/blocks/onions_stage0"
+      ]
+    },
+    "farmersdelight.onions_stage1": {
+      "textures": [
+        "textures/blocks/onions_stage1"
+      ]
+    },
+    "farmersdelight.onions_stage2": {
+      "textures": [
+        "textures/blocks/onions_stage2"
+      ]
+    },
+    "farmersdelight.onions_stage3": {
+      "textures": [
+        "textures/blocks/onions_stage3"
+      ]
+    },
+    "farmersdelight.orange_canvas_sign": {
+      "textures": [
+        "textures/blocks/orange_canvas_sign"
+      ]
+    },
+    "farmersdelight.orange_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/orange_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.organic_compost_stage0": {
+      "textures": [
+        "textures/blocks/organic_compost_stage0"
+      ]
+    },
+    "farmersdelight.organic_compost_stage1": {
+      "textures": [
+        "textures/blocks/organic_compost_stage1"
+      ]
+    },
+    "farmersdelight.organic_compost_stage2": {
+      "textures": [
+        "textures/blocks/organic_compost_stage2"
+      ]
+    },
+    "farmersdelight.organic_compost_stage3": {
+      "textures": [
+        "textures/blocks/organic_compost_stage3"
+      ]
+    },
+    "farmersdelight.pale_oak_cabinet_front": {
+      "textures": [
+        "textures/blocks/pale_oak_cabinet_front"
+      ]
+    },
+    "farmersdelight.pale_oak_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/pale_oak_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.pale_oak_cabinet_side": {
+      "textures": [
+        "textures/blocks/pale_oak_cabinet_side"
+      ]
+    },
+    "farmersdelight.pale_oak_cabinet_top": {
+      "textures": [
+        "textures/blocks/pale_oak_cabinet_top"
+      ]
+    },
+    "farmersdelight.pie_bottom": {
+      "textures": [
+        "textures/blocks/pie_bottom"
+      ]
+    },
+    "farmersdelight.pie_side": {
+      "textures": [
+        "textures/blocks/pie_side"
+      ]
+    },
+    "farmersdelight.pink_canvas_sign": {
+      "textures": [
+        "textures/blocks/pink_canvas_sign"
+      ]
+    },
+    "farmersdelight.pink_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/pink_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.platter": {
+      "textures": [
+        "textures/blocks/platter"
+      ]
+    },
+    "farmersdelight.poplar_cabinet_front": {
+      "textures": [
+        "textures/blocks/poplar_cabinet_front"
+      ]
+    },
+    "farmersdelight.poplar_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/poplar_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.poplar_cabinet_side": {
+      "textures": [
+        "textures/blocks/poplar_cabinet_side"
+      ]
+    },
+    "farmersdelight.poplar_cabinet_top": {
+      "textures": [
+        "textures/blocks/poplar_cabinet_top"
+      ]
+    },
+    "farmersdelight.potato_crate_side": {
+      "textures": [
+        "textures/blocks/potato_crate_side"
+      ]
+    },
+    "farmersdelight.potato_crate_top": {
+      "textures": [
+        "textures/blocks/potato_crate_top"
+      ]
+    },
+    "farmersdelight.pumpkin_pie_inner": {
+      "textures": [
+        "textures/blocks/pumpkin_pie_inner"
+      ]
+    },
+    "farmersdelight.pumpkin_pie_top": {
+      "textures": [
+        "textures/blocks/pumpkin_pie_top"
+      ]
+    },
+    "farmersdelight.purple_canvas_sign": {
+      "textures": [
+        "textures/blocks/purple_canvas_sign"
+      ]
+    },
+    "farmersdelight.purple_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/purple_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.red_canvas_sign": {
+      "textures": [
+        "textures/blocks/red_canvas_sign"
+      ]
+    },
+    "farmersdelight.red_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/red_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.red_mushroom_colony_stage0": {
+      "textures": [
+        "textures/blocks/red_mushroom_colony_stage0"
+      ]
+    },
+    "farmersdelight.red_mushroom_colony_stage1": {
+      "textures": [
+        "textures/blocks/red_mushroom_colony_stage1"
+      ]
+    },
+    "farmersdelight.red_mushroom_colony_stage2": {
+      "textures": [
+        "textures/blocks/red_mushroom_colony_stage2"
+      ]
+    },
+    "farmersdelight.red_mushroom_colony_stage3": {
+      "textures": [
+        "textures/blocks/red_mushroom_colony_stage3"
+      ]
+    },
+    "farmersdelight.rice_bag_bottom": {
+      "textures": [
+        "textures/blocks/rice_bag_bottom"
+      ]
+    },
+    "farmersdelight.rice_bag_side": {
+      "textures": [
+        "textures/blocks/rice_bag_side"
+      ]
+    },
+    "farmersdelight.rice_bag_side_tied": {
+      "textures": [
+        "textures/blocks/rice_bag_side_tied"
+      ]
+    },
+    "farmersdelight.rice_bag_top": {
+      "textures": [
+        "textures/blocks/rice_bag_top"
+      ]
+    },
+    "farmersdelight.rice_bale_bottom": {
+      "textures": [
+        "textures/blocks/rice_bale_bottom"
+      ]
+    },
+    "farmersdelight.rice_bale_side": {
+      "textures": [
+        "textures/blocks/rice_bale_side"
+      ]
+    },
+    "farmersdelight.rice_bale_top": {
+      "textures": [
+        "textures/blocks/rice_bale_top"
+      ]
+    },
+    "farmersdelight.rice_panicles_stage0": {
+      "textures": [
+        "textures/blocks/rice_panicles_stage0"
+      ]
+    },
+    "farmersdelight.rice_panicles_stage1": {
+      "textures": [
+        "textures/blocks/rice_panicles_stage1"
+      ]
+    },
+    "farmersdelight.rice_panicles_stage2": {
+      "textures": [
+        "textures/blocks/rice_panicles_stage2"
+      ]
+    },
+    "farmersdelight.rice_panicles_stage3": {
+      "textures": [
+        "textures/blocks/rice_panicles_stage3"
+      ]
+    },
+    "farmersdelight.rice_roll_medley": {
+      "textures": [
+        "textures/blocks/rice_roll_medley"
+      ]
+    },
+    "farmersdelight.rice_stage0": {
+      "textures": [
+        "textures/blocks/rice_stage0"
+      ]
+    },
+    "farmersdelight.rice_stage1": {
+      "textures": [
+        "textures/blocks/rice_stage1"
+      ]
+    },
+    "farmersdelight.rice_stage2": {
+      "textures": [
+        "textures/blocks/rice_stage2"
+      ]
+    },
+    "farmersdelight.rice_stage3": {
+      "textures": [
+        "textures/blocks/rice_stage3"
+      ]
+    },
+    "farmersdelight.rice_supporting": {
+      "textures": [
+        "textures/blocks/rice_supporting"
+      ]
+    },
+    "farmersdelight.rich_soil": {
+      "textures": [
+        "textures/blocks/rich_soil"
+      ]
+    },
+    "farmersdelight.rich_soil_farmland": {
+      "textures": [
+        "textures/blocks/rich_soil_farmland"
+      ]
+    },
+    "farmersdelight.rich_soil_farmland_moist": {
+      "textures": [
+        "textures/blocks/rich_soil_farmland_moist"
+      ]
+    },
+    "farmersdelight.rich_soil_farmland_moist_side": {
+      "textures": [
+        "textures/blocks/rich_soil_farmland_moist_side"
+      ]
+    },
+    "farmersdelight.roast_chicken": {
+      "textures": [
+        "textures/blocks/roast_chicken"
+      ]
+    },
+    "farmersdelight.roast_chicken_details": {
+      "textures": [
+        "textures/blocks/roast_chicken_details"
+      ]
+    },
+    "farmersdelight.roast_chicken_leftovers": {
+      "textures": [
+        "textures/blocks/roast_chicken_leftovers"
+      ]
+    },
+    "farmersdelight.roast_chicken_side_dish": {
+      "textures": [
+        "textures/blocks/roast_chicken_side_dish"
+      ]
+    },
+    "farmersdelight.rope": {
+      "textures": [
+        "textures/blocks/rope"
+      ]
+    },
+    "farmersdelight.rope_fence": {
+      "textures": [
+        "textures/blocks/rope_fence"
+      ]
+    },
+    "farmersdelight.rope_fence_gate": {
+      "textures": [
+        "textures/blocks/rope_fence_gate"
+      ]
+    },
+    "farmersdelight.rope_fence_gate_open": {
+      "textures": [
+        "textures/blocks/rope_fence_gate_open"
+      ]
+    },
+    "farmersdelight.rope_fence_gate_wall": {
+      "textures": [
+        "textures/blocks/rope_fence_gate_wall"
+      ]
+    },
+    "farmersdelight.rope_top": {
+      "textures": [
+        "textures/blocks/rope_top"
+      ]
+    },
+    "farmersdelight.safety_net": {
+      "textures": [
+        "textures/blocks/safety_net"
+      ]
+    },
+    "farmersdelight.sandy_shrub": {
+      "textures": [
+        "textures/blocks/sandy_shrub"
+      ]
+    },
+    "farmersdelight.shepherds_pie_inner": {
+      "textures": [
+        "textures/blocks/shepherds_pie_inner"
+      ]
+    },
+    "farmersdelight.shepherds_pie_leftovers": {
+      "textures": [
+        "textures/blocks/shepherds_pie_leftovers"
+      ]
+    },
+    "farmersdelight.shepherds_pie_side": {
+      "textures": [
+        "textures/blocks/shepherds_pie_side"
+      ]
+    },
+    "farmersdelight.shepherds_pie_top": {
+      "textures": [
+        "textures/blocks/shepherds_pie_top"
+      ]
+    },
+    "farmersdelight.skillet_bottom": {
+      "textures": [
+        "textures/blocks/skillet_bottom"
+      ]
+    },
+    "farmersdelight.skillet_side": {
+      "textures": [
+        "textures/blocks/skillet_side"
+      ]
+    },
+    "farmersdelight.skillet_top": {
+      "textures": [
+        "textures/blocks/skillet_top"
+      ]
+    },
+    "farmersdelight.spruce_cabinet_front": {
+      "textures": [
+        "textures/blocks/spruce_cabinet_front"
+      ]
+    },
+    "farmersdelight.spruce_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/spruce_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.spruce_cabinet_side": {
+      "textures": [
+        "textures/blocks/spruce_cabinet_side"
+      ]
+    },
+    "farmersdelight.spruce_cabinet_top": {
+      "textures": [
+        "textures/blocks/spruce_cabinet_top"
+      ]
+    },
+    "farmersdelight.stove_bottom": {
+      "textures": [
+        "textures/blocks/stove_bottom"
+      ]
+    },
+    "farmersdelight.stove_front": {
+      "textures": [
+        "textures/blocks/stove_front"
+      ]
+    },
+    "farmersdelight.stove_front_on": {
+      "textures": [
+        "textures/blocks/stove_front_on"
+      ]
+    },
+    "farmersdelight.stove_side": {
+      "textures": [
+        "textures/blocks/stove_side"
+      ]
+    },
+    "farmersdelight.stove_top": {
+      "textures": [
+        "textures/blocks/stove_top"
+      ]
+    },
+    "farmersdelight.stove_top_on": {
+      "textures": [
+        "textures/blocks/stove_top_on"
+      ]
+    },
+    "farmersdelight.straw_bale_end": {
+      "textures": [
+        "textures/blocks/straw_bale_end"
+      ]
+    },
+    "farmersdelight.straw_bale_side": {
+      "textures": [
+        "textures/blocks/straw_bale_side"
+      ]
+    },
+    "farmersdelight.straw_bed": {
+      "textures": [
+        "textures/blocks/straw_bed"
+      ]
+    },
+    "farmersdelight.straw_bed_particle": {
+      "textures": [
+        "textures/blocks/straw_bed_particle"
+      ]
+    },
+    "farmersdelight.stuffed_pumpkin_bottom": {
+      "textures": [
+        "textures/blocks/stuffed_pumpkin_bottom"
+      ]
+    },
+    "farmersdelight.stuffed_pumpkin_details": {
+      "textures": [
+        "textures/blocks/stuffed_pumpkin_details"
+      ]
+    },
+    "farmersdelight.stuffed_pumpkin_side": {
+      "textures": [
+        "textures/blocks/stuffed_pumpkin_side"
+      ]
+    },
+    "farmersdelight.stuffed_pumpkin_top": {
+      "textures": [
+        "textures/blocks/stuffed_pumpkin_top"
+      ]
+    },
+    "farmersdelight.stuffed_pumpkin_top_eaten": {
+      "textures": [
+        "textures/blocks/stuffed_pumpkin_top_eaten"
+      ]
+    },
+    "farmersdelight.sweet_berry_cheesecake_inner": {
+      "textures": [
+        "textures/blocks/sweet_berry_cheesecake_inner"
+      ]
+    },
+    "farmersdelight.sweet_berry_cheesecake_top": {
+      "textures": [
+        "textures/blocks/sweet_berry_cheesecake_top"
+      ]
+    },
+    "farmersdelight.tatami": {
+      "textures": [
+        "textures/blocks/tatami"
+      ]
+    },
+    "farmersdelight.tatami_even": {
+      "textures": [
+        "textures/blocks/tatami_even"
+      ]
+    },
+    "farmersdelight.tatami_mat_even": {
+      "textures": [
+        "textures/blocks/tatami_mat_even"
+      ]
+    },
+    "farmersdelight.tatami_mat_half": {
+      "textures": [
+        "textures/blocks/tatami_mat_half"
+      ]
+    },
+    "farmersdelight.tatami_mat_odd": {
+      "textures": [
+        "textures/blocks/tatami_mat_odd"
+      ]
+    },
+    "farmersdelight.tatami_mat_side": {
+      "textures": [
+        "textures/blocks/tatami_mat_side"
+      ]
+    },
+    "farmersdelight.tatami_odd": {
+      "textures": [
+        "textures/blocks/tatami_odd"
+      ]
+    },
+    "farmersdelight.tomato_crate_side": {
+      "textures": [
+        "textures/blocks/tomato_crate_side"
+      ]
+    },
+    "farmersdelight.tomato_crate_top": {
+      "textures": [
+        "textures/blocks/tomato_crate_top"
+      ]
+    },
+    "farmersdelight.tomatoes_coiled_rope": {
+      "textures": [
+        "textures/blocks/tomatoes_coiled_rope"
+      ]
+    },
+    "farmersdelight.tomatoes_old_stage0": {
+      "textures": [
+        "textures/blocks/tomatoes_old_stage0"
+      ]
+    },
+    "farmersdelight.tomatoes_old_stage1": {
+      "textures": [
+        "textures/blocks/tomatoes_old_stage1"
+      ]
+    },
+    "farmersdelight.tomatoes_old_stage2": {
+      "textures": [
+        "textures/blocks/tomatoes_old_stage2"
+      ]
+    },
+    "farmersdelight.tomatoes_old_stage3": {
+      "textures": [
+        "textures/blocks/tomatoes_old_stage3"
+      ]
+    },
+    "farmersdelight.tomatoes_on_rope_stage0": {
+      "textures": [
+        "textures/blocks/tomatoes_on_rope_stage0"
+      ]
+    },
+    "farmersdelight.tomatoes_on_rope_stage1": {
+      "textures": [
+        "textures/blocks/tomatoes_on_rope_stage1"
+      ]
+    },
+    "farmersdelight.tomatoes_on_rope_stage2": {
+      "textures": [
+        "textures/blocks/tomatoes_on_rope_stage2"
+      ]
+    },
+    "farmersdelight.tomatoes_on_rope_stage3": {
+      "textures": [
+        "textures/blocks/tomatoes_on_rope_stage3"
+      ]
+    },
+    "farmersdelight.tomatoes_stage0": {
+      "textures": [
+        "textures/blocks/tomatoes_stage0"
+      ]
+    },
+    "farmersdelight.tomatoes_stage1": {
+      "textures": [
+        "textures/blocks/tomatoes_stage1"
+      ]
+    },
+    "farmersdelight.tomatoes_stage2": {
+      "textures": [
+        "textures/blocks/tomatoes_stage2"
+      ]
+    },
+    "farmersdelight.tomatoes_stage3": {
+      "textures": [
+        "textures/blocks/tomatoes_stage3"
+      ]
+    },
+    "farmersdelight.tray": {
+      "textures": [
+        "textures/blocks/tray"
+      ]
+    },
+    "farmersdelight.tray_bottom": {
+      "textures": [
+        "textures/blocks/tray_bottom"
+      ]
+    },
+    "farmersdelight.warped_cabinet_front": {
+      "textures": [
+        "textures/blocks/warped_cabinet_front"
+      ]
+    },
+    "farmersdelight.warped_cabinet_front_open": {
+      "textures": [
+        "textures/blocks/warped_cabinet_front_open"
+      ]
+    },
+    "farmersdelight.warped_cabinet_side": {
+      "textures": [
+        "textures/blocks/warped_cabinet_side"
+      ]
+    },
+    "farmersdelight.warped_cabinet_top": {
+      "textures": [
+        "textures/blocks/warped_cabinet_top"
+      ]
+    },
+    "farmersdelight.white_canvas_sign": {
+      "textures": [
+        "textures/blocks/white_canvas_sign"
+      ]
+    },
+    "farmersdelight.white_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/white_hanging_canvas_sign"
+      ]
+    },
+    "farmersdelight.wild_beetroots": {
+      "textures": [
+        "textures/blocks/wild_beetroots"
+      ]
+    },
+    "farmersdelight.wild_cabbages": {
+      "textures": [
+        "textures/blocks/wild_cabbages"
+      ]
+    },
+    "farmersdelight.wild_carrots": {
+      "textures": [
+        "textures/blocks/wild_carrots"
+      ]
+    },
+    "farmersdelight.wild_onions": {
+      "textures": [
+        "textures/blocks/wild_onions"
+      ]
+    },
+    "farmersdelight.wild_potatoes": {
+      "textures": [
+        "textures/blocks/wild_potatoes"
+      ]
+    },
+    "farmersdelight.wild_rice_bottom": {
+      "textures": [
+        "textures/blocks/wild_rice_bottom"
+      ]
+    },
+    "farmersdelight.wild_rice_top": {
+      "textures": [
+        "textures/blocks/wild_rice_top"
+      ]
+    },
+    "farmersdelight.wild_tomatoes": {
+      "textures": [
+        "textures/blocks/wild_tomatoes"
+      ]
+    },
+    "farmersdelight.wooden_basket_bottom": {
+      "textures": [
+        "textures/blocks/wooden_basket_bottom"
+      ]
+    },
+    "farmersdelight.wooden_basket_handle": {
+      "textures": [
+        "textures/blocks/wooden_basket_handle"
+      ]
+    },
+    "farmersdelight.wooden_basket_side": {
+      "textures": [
+        "textures/blocks/wooden_basket_side"
+      ]
+    },
+    "farmersdelight.wooden_basket_top": {
+      "textures": [
+        "textures/blocks/wooden_basket_top"
+      ]
+    },
+    "farmersdelight.yellow_canvas_sign": {
+      "textures": [
+        "textures/blocks/yellow_canvas_sign"
+      ]
+    },
+    "farmersdelight.yellow_hanging_canvas_sign": {
+      "textures": [
+        "textures/blocks/yellow_hanging_canvas_sign"
+      ]
+    }
+  }
+}

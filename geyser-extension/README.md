@@ -32,7 +32,11 @@ item.farmersdelight.hamburger=73
 
 This file is generated on the server by the bridge mod (see `../server_tests/bridge-mod/`).
 Run both `/fdg dumpids` and `/fdg dumpblocks`; the latter creates `farmersdelight_blocks.properties` in the same extension data folder.
-Items without an entry are skipped with a warning.
+The extension applies the special food/tool settings in `FdItems.java` and the block placement
+settings in `FdBlocks.java`. It also automatically registers other Java item IDs from
+`farmersdelight.properties` when their icon shorthand exists in the generated item-icon manifest.
+This covers additional items such as canvas-sign variants, pie blocks and tatami variants without
+requiring a hand-maintained Java list.
 
 > The food values in `FdItems.java` are taken from the mod's `FoodValues`.
 
@@ -46,8 +50,11 @@ python server_tests/tools/build_bedrock_rp.py \
     --skeleton bedrock-resourcepack --out bedrock-resourcepack-built --mcpack bedrock-resourcepack-built.mcpack
 ```
 
-This extracts the real PNG textures and generates `item_texture.json`/`terrain_texture.json`.
-Place the `.mcpack` into Geyser's `packs/`.
+The generator extracts the real PNGs, writes `item_texture.json`/`terrain_texture.json`, and updates
+`geyser-extension/src/main/resources/farmersdelight-item-icons.txt` from the exact item atlas keys.
+It also derives the Bedrock manifest version from the pack contents, invalidating stale client-side
+resource-pack caches when textures change. **Run the generator before rebuilding the extension** so
+the new JAR contains the matching icon manifest. Place the generated `.mcpack` into Geyser's `packs/`.
 The root `bedrock-resourcepack/` folder is only a model/manifest skeleton; do not install it directly.
 
 ## Required setup on Geyser
